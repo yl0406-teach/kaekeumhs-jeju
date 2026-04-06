@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026학년도 수학여행 안내서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; color: #334155; line-height: 1.6; }
+        .gradient-header { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+        .card { background: white; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 1.25rem; overflow: hidden; border: 1px solid #e2e8f0; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .schedule-line { border-left: 2px solid #3b82f6; padding-left: 1rem; position: relative; margin-left: 0.5rem; }
+        .schedule-dot { position: absolute; left: -5px; top: 0; width: 8px; height: 8px; background: #3b82f6; border-radius: 50%; }
+        .nav-item { cursor: pointer; color: #94a3b8; transition: all 0.2s; flex: 1; }
+        .nav-item.active { color: #2563eb; font-weight: bold; }
+        .section-title { font-weight: 700; font-size: 1.125rem; margin-bottom: 1rem; display: flex; align-items: center; }
+        .highlight-red { color: #dc2626; font-weight: 700; }
+        .list-dot { list-style-type: none; padding-left: 0; }
+        .list-dot li { margin-bottom: 0.5rem; position: relative; padding-left: 1.2rem; }
+        .list-dot li::before { content: "• "; color: #3b82f6; font-weight: bold; position: absolute; left: 0; }
+        .whitespace-pre-wrap { white-space: pre-wrap; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <div class="gradient-header text-white px-6 py-8 text-center shadow-lg">
+        <h1 class="text-xl font-bold mb-1">2026학년도 수학여행 안내서</h1>
+        <p class="opacity-90 text-sm">개금고등학교 2학년 (제주도)</p>
+        <p class="text-xs mt-1 opacity-80">2026.04.07(화) ~ 04.10(금)</p>
+    </div>
+
+    <div class="max-w-md mx-auto px-4 mt-6">
+        
+        <div id="home-tab" class="tab-content active">
+            <div class="card p-5 bg-blue-50 border-2 border-blue-200">
+                <h2 class="section-title text-blue-800"><i class="fas fa-star mr-2 text-yellow-500"></i>개금고인의 품위 유지</h2>
+                <p class="text-sm text-gray-700 leading-relaxed font-bold">
+                    공공장소에서 개금고 학생으로서의 품위를 유지하고 타인에게 피해를 주지 않는다.
+                </p>
+            </div>
+
+            <div class="card p-5 border-l-4 border-l-blue-500">
+                <h2 class="section-title text-blue-700"><i class="fas fa-plane mr-2"></i>항공 및 집결 안내</h2>
+                <div class="space-y-4">
+                    <div class="bg-blue-100 p-4 rounded-xl text-center">
+                        <p class="text-xs text-blue-600 font-bold">출발 집결: 4월 7일(화) 05:40</p>
+                        <p class="text-lg font-black text-blue-900 leading-tight">김해공항 국내선 청사<br>2층 4번 게이트 진에어 카운터 앞</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-center">
+                            <p class="font-bold text-gray-500 mb-1">부산 → 제주 (4/7)</p>
+                            <p class="text-blue-600 font-bold">진에어 LJ561편</p>
+                            <p class="text-gray-800 font-medium">07:25 ~ 08:25</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-center">
+                            <p class="font-bold text-gray-500 mb-1">제주 → 부산 (4/10)</p>
+                            <p class="text-blue-600 font-bold">진에어 LJ566편</p>
+                            <p class="text-gray-800 font-medium">17:20 ~ 18:20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-5 bg-orange-50 border-orange-100">
+                <h2 class="section-title text-orange-800"><i class="fas fa-suitcase-rolling mr-2"></i>🧳 수화물 안내</h2>
+                <div class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap font-medium">모든 캐리어는 수화물로 부쳐짐
+아래 물품은 캐리어에 넣지 마세요! 
+   🔋 보조배터리 🔥 라이터 💇 고데기
+수화물 무게 초과 시, 초과 요금 본인 부담</div>
+            </div>
+
+            <div class="card p-5">
+                <h2 class="section-title"><i class="fas fa-bullhorn mr-2 text-blue-500"></i>주요 안내 확인</h2>
+                <div class="space-y-3">
+                    <button onclick="switchTab('safety')" class="w-full py-4 bg-red-50 text-red-700 rounded-xl text-sm font-bold flex justify-between px-4 items-center border border-red-100">
+                        <span>🚨 안전 필수 수칙 (안전 ZIP)</span><i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button onclick="switchTab('rules')" class="w-full py-4 bg-emerald-50 text-emerald-700 rounded-xl text-sm font-bold flex justify-between px-4 items-center border border-emerald-100">
+                        <span>🏢 숙소/차량 배치 및 생활수칙</span><i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="safety-tab" class="tab-content">
+            <h2 class="font-bold text-xl mb-4 ml-1">🚫 안전 필수 수칙</h2>
+            
+            <div class="card p-5 border-t-4 border-t-red-600">
+                <h3 class="font-bold text-red-600 mb-3 text-sm">🚫 성 관련 문제, 음주, 흡연, 딥페이크, 도촬 절대 금지 🚫</h3>
+                <ul class="text-sm space-y-2 text-gray-700 list-dot">
+                    <li>무단 도촬(특히 자는 모습, 샤워 등) 금지</li>
+                    <li>동의 없는 사진·영상 촬영 및 SNS 공유 금지</li>
+                    <li><span class="highlight-red">적발 시, 전교생 휴대폰을 일괄 수거할 예정</span></li>
+                    <li>위 행위는 학교폭력 신고 및 징계 대상</li>
+                    <li>음주 및 흡연 적발 시, 학교 복귀 후 징계</li>
+                    <li>신분증 도용을 통한 주류/담배 구입 시 형사 처벌 대상임</li>
+                </ul>
+            </div>
+
+            <div class="card p-5 border-t-4 border-t-orange-500">
+                <h3 class="font-bold text-orange-600 mb-3">🚫 불법 게임·도박 사이트 이용 금지</h3>
+                <ul class="text-sm space-y-2 text-gray-700 list-dot">
+                    <li>관련 행위 발견 시 교사에게 즉시 제보, 방관 또한 책임으로 간주될 수 있음</li>
+                    <li>학교 규정에 따른 엄중한 조치 대상</li>
+                </ul>
+            </div>
+
+            <div class="card p-5 border-t-4 border-t-blue-500">
+                <h3 class="font-bold text-blue-600 mb-3">👟 신발 및 복장, 준비물</h3>
+                <ul class="text-sm space-y-2 text-gray-700 list-dot">
+                    <li>활동하기 편한 <strong>운동화 착용 필수</strong></li>
+                    <li>제주도 특성상 돌밭이 많으므로 <strong>슬리퍼 금지</strong></li>
+                    <li>카트 체험 등을 대비하여 <strong>긴팔, 긴바지 준비</strong></li>
+                    <li>목, 금 비 예보에 따른 <strong>우산 준비</strong></li>
+                    <li>수건 지급 안내: 숙소 내 수건은 1인당 1일 1개씩만 지급됨. (개인용 추가 수건 필요 시 별도 지참 권장)</li>
+                </ul>
+            </div>
+
+            <div class="card p-5 border-b-4 border-b-indigo-400">
+                <h3 class="font-bold text-indigo-700 mb-3">💊 개인 약품 및 알러지</h3>
+                <ul class="text-sm space-y-2 text-gray-700 list-dot">
+                    <li>평소 복용하는 약은 반드시 본인이 직접 챙기기</li>
+                    <li>음식 섭취 시 본인의 알레르기 유무 고려</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="rules-tab" class="tab-content">
+            <h2 class="font-bold text-xl mb-4 ml-1">🏢 배치표 및 생활수칙</h2>
+
+            <div class="card p-4 bg-white">
+                <h3 class="font-bold text-blue-800 mb-3"><i class="fas fa-bus mr-2"></i>차량 배정표</h3>
+                <img src="bus.jpg" alt="차량 배정표" class="w-full h-auto border border-gray-200 rounded" onerror="this.outerHTML='<div class=\'p-4 bg-gray-100 text-center text-xs text-red-500 rounded border border-red-200\'>⚠️ GitHub에 <b>bus.jpg</b> 파일을 업로드해주세요.</div>'">
+            </div>
+
+            <div class="card p-4 bg-white">
+                <h3 class="font-bold text-green-800 mb-3"><i class="fas fa-bed mr-2"></i>숙소 배치표</h3>
+                <img src="room.jpg" alt="숙소 배치표" class="w-full h-auto border border-gray-200 rounded" onerror="this.outerHTML='<div class=\'p-4 bg-gray-100 text-center text-xs text-red-500 rounded border border-red-200\'>⚠️ GitHub에 <b>room.jpg</b> 파일을 업로드해주세요.</div>'">
+            </div>
+            
+            <div class="card p-5 whitespace-pre-wrap text-sm text-gray-700">
+<span class="text-lg font-bold text-emerald-700">🏨 숙소 생활 안내</span>
+<strong>📌 방장 지정</strong>
+숙소 배치표 각 호실의 첫 번째 학생 = 방장
+<strong>📌 방장의 역할</strong>
+숙소 도착 후 열쇠 관리 및 방 상태 점검
+방 내 소란 및 불건전 행동 통제
+퇴실 시 열쇠 반납, 쓰레기 처리, 분실물 확인
+<strong>📌 생활 규칙</strong>
+🕙 점호 시간: 밤 10시
+점호 후 방 간 이동 금지
+숙소 내 음식 배달 금지
+샤워 및 취침 시간은 룸메이트끼리 미리 조율하여 갈등 예방
+            </div>
+
+            <div class="card p-5 whitespace-pre-wrap text-sm text-gray-700">
+<span class="text-lg font-bold text-amber-700">📅 깨알 정보</span>
+첫째 날 난타 공연 관람 시, 계단이 가파르므로 이동 시 안전 유의
+셋째 날 석식 🍖바비큐 고기는 구워서 제공됨
+🎁 레크레이션 총 40만 원 상당 상품 제공, 적극적인 신청 및 참여 권장
+            </div>
+        </div>
+
+        <div id="schedule-tab" class="tab-content">
+            <h2 class="font-bold text-xl mb-4 ml-1">📅 전체 일정표</h2>
+            
+            <div class="card p-5">
+                <div class="flex justify-between items-center border-b pb-2 mb-4">
+                    <h3 class="font-bold text-blue-600">제1일 (4/7) 화요일</h3>
+                    <span class="text-[10px] bg-gray-100 text-gray-700 px-2 py-1 rounded font-bold">중식, 석식(숙소식)</span>
+                </div>
+                <div class="space-y-4 text-sm font-medium">
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">05:40</span> <span class="font-bold">김해공항집결 (국내선청사2층 4번게이트 진에어)</span></div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right font-bold">07:25~08:25</span> <span class="font-bold text-blue-700">김해공항 출발 → 제주공항 도착 (진에어561편)</span></div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">10:00~11:00</span> 피규어뮤지엄</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">11:30~12:30</span> 중식:소인국푸드코트 (한식뷔페)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">13:00~14:30</span> 새별오름</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">16:00~18:00</span> 난타공연 (16:30공연시작)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">18:30~19:00</span> 숙소 도착 후 체크인</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">19:30~20:30</span> 석식</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right"></span> 호텔 휴식</div>
+                </div>
+            </div>
+
+            <div class="card p-5">
+                <div class="flex justify-between items-center border-b pb-2 mb-4">
+                    <h3 class="font-bold text-green-600">제2일 (4/8) 수요일</h3>
+                    <span class="text-[10px] bg-gray-100 text-gray-700 px-2 py-1 rounded font-bold">조식(숙소식), 중식, 석식(바비큐)</span>
+                </div>
+                <div class="space-y-4 text-sm font-medium">
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">08:50</span> 호텔조식 후 출발</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">09:20~11:00</span> 주상절리 / 제트보트 (교차진행) 09:20 / 10:00</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">11:40~12:40</span> 중식 : 무송 (불고기+세미뷔페)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">13:00~14:30</span> 1947 카트 체험</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">15:20~17:00</span> 풋살경기 및 자유시간</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">17:00~18:30</span> 석식 : 숙소 바비큐 - 30,000원</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">18:30~19:30</span> 호텔 휴식</div>
+                </div>
+            </div>
+
+            <div class="card p-5">
+                <div class="flex justify-between items-center border-b pb-2 mb-4">
+                    <h3 class="font-bold text-orange-600">제3일 (4/9) 목요일</h3>
+                    <span class="text-[10px] bg-gray-100 text-gray-700 px-2 py-1 rounded font-bold">조식(숙소식), 중식(현지식), 석식(숙소식)</span>
+                </div>
+                <div class="space-y-4 text-sm font-medium">
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">08:30</span> 호텔 조식 후 출발</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">10:00~11:20</span> 아쿠아플라넷 (오전에 비가 안오면, 성산일출봉)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">11:30~12:20</span> 섭지코지</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">13:00~14:00</span> 중식 : 참더덕과흑돼지 (돼지주물럭구이)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">14:30~15:40</span> 성산일출봉 (오전에 비가 안오면, 아쿠아플라넷)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">16:20~17:30</span> 돌문화공원</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">18:30~19:30</span> 석식</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">20:00~22:00</span> 레크레이션</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right"></span> 숙소도착 후 석식</div>
+                </div>
+            </div>
+
+            <div class="card p-5">
+                <div class="flex justify-between items-center border-b pb-2 mb-4">
+                    <h3 class="font-bold text-gray-600">제4일 (4/10) 금요일</h3>
+                    <span class="text-[10px] bg-gray-100 text-gray-700 px-2 py-1 rounded font-bold">조식(숙소식), 중식</span>
+                </div>
+                <div class="space-y-4 text-sm font-medium">
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">08:30</span> 호텔 조식 후 출발</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">09:30~10:30</span> 4.3 공원</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">10:50~12:00</span> 산굼부리</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">13:00~14:00</span> 중식 : 이레한정식 (김치전골+돔베고기등)</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right">14:30</span> 제주 공항 도착 후 수속</div>
+                    <div class="schedule-line"><div class="schedule-dot"></div><span class="text-gray-500 mr-2 w-20 inline-block text-right font-bold">17:20~18:20</span> <span class="font-bold text-blue-700">제주공항 출발 → 김해공항 도착 (진에어566편)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="workbook-tab" class="tab-content">
+            <h2 class="font-bold text-xl mb-4 ml-1">📝 활동 안전 & 학습</h2>
+            
+            <div class="card p-5">
+                <h3 class="font-bold text-blue-600 mb-3"><i class="fas fa-car mr-2"></i>카트 주행 안전 수칙</h3>
+                <div class="text-xs space-y-3 text-gray-600 text-left">
+                    <p><strong>1) 카트 탑승 전 안전 수칙</strong><br>
+                    - 긴 머리는 미리 묶고, 펄럭이는 옷은 잘 정리하여 탑승한다.<br>
+                    - 소지품은 바구니에 넣어 보관한다.<br>
+                    - 출발 신호 전에 카트 기기를 임의로 조작하지 않는다.<br>
+                    - 안전 유도 요원의 안내에 따라 서서히 운행한다.</p>
+                    <p><strong>2) 카트 주행 중 안전 수칙</strong><br>
+                    - 카트 운행 중에는 급정지, 자리에서 일어나는 행위, 동승자와의 장난, 사진촬영 등 불필요한 행동을 하지 않는다.<br>
+                    - 안전을 위해 급정차, 과속, 무단 하차, 정차를 금지한다.</p>
+                    <p><strong>3) 카트 도착 시 안전 수칙</strong><br>
+                    - 카트 에서 내릴 때는 브레이크를 조작하여 완전히 정지된 것을 확인한 후 내린다.<br>
+                    - 개인 소지품을 확인한 후 하차하고, 보관된 소지품은 반드시 찾아간다.</p>
+                </div>
+            </div>
+
+            <div class="card p-5">
+                <h3 class="font-bold text-cyan-600 mb-3"><i class="fas fa-ship mr-2"></i>제트보트 등 수상 활동 안전수칙</h3>
+                <div class="text-xs space-y-2 text-gray-600">
+                    <p>• 활동 전 반드시 준비 운동을 하고 안전 수칙, 위험지역 안내 등 안전에 대한 내용을 익힌다.</p>
+                    <p>• 각종 장비(구명동의 등) 점검과 착용 방법 및 착용 상태를 확인한다.</p>
+                    <p>• 안전사고 발생 때는 침착하게 대응하고, 인솔교사나 119구조대, 122로 신고한다.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around p-2 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50">
+        <div id="nav-home" onclick="switchTab('home')" class="nav-item text-center active">
+            <i class="fas fa-home text-lg"></i>
+            <p class="text-[10px] mt-1">홈</p>
+        </div>
+        <div id="nav-safety" onclick="switchTab('safety')" class="nav-item text-center">
+            <i class="fas fa-shield-alt text-lg"></i>
+            <p class="text-[10px] mt-1">안전수칙</p>
+        </div>
+        <div id="nav-rules" onclick="switchTab('rules')" class="nav-item text-center">
+            <i class="fas fa-users text-lg"></i>
+            <p class="text-[10px] mt-1">배치/생활</p>
+        </div>
+        <div id="nav-schedule" onclick="switchTab('schedule')" class="nav-item text-center">
+            <i class="fas fa-calendar-alt text-lg"></i>
+            <p class="text-[10px] mt-1">일정표</p>
+        </div>
+        <div id="nav-workbook" onclick="switchTab('workbook')" class="nav-item text-center">
+            <i class="fas fa-book text-lg"></i>
+            <p class="text-[10px] mt-1">워크북</p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+            document.getElementById('nav-' + tabName).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
